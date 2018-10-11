@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h1>{{title}}</h1>
+
+
+    <form>
+      <div class="form-group row">
+        <label for="firstname-input" class="col-2 col-form-label">First Name</label>
+        <div class="col-10">
+          <input class="form-control" type="text" [(ngModel)]="contact.firstName" name="firstName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="lastname-input" class="col-2 col-form-label">Last Name</label>
+        <div class="col-10">
+          <input class="form-control" type="text" [(ngModel)]="contact.lastName" name="lastName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="contact-input" class="col-2 col-form-label">Phone<span style="color: red">*</span></label>
+        <div class="col-10">
+          <input class="form-control" type="text" [(ngModel)]="contact.contactNo" (ngModelChange)="resetPhoneError()" name="contactNo">
+          <span style=" color: red">{{phone_errormessage}}</span>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <label for="email-input" class="col-2 col-form-label">Email<span style="color: red">*</span></label>
+        <div class="col-10">
+          <input class="form-control" type="text" [(ngModel)]="contact.email" (ngModelChange)="resetEmailError()" name="email">
+          <span style="color: red">{{email_errormessage}}</span>
+        </div>
+
+      </div>
+      <div class="form-group row">
+        <label for="address-input" class="col-2 col-form-label">Address</label>
+        <div class="col-10">
+          <input class="form-control" type="text" [(ngModel)]="contact.address" name="address">
+        </div>
+      </div>
+      <button type="button" class="btn btn-success"  Style="width: 100px;" (click)="onSave()">{{buttonValue}}</button>
+
+
+      <button type="button" class="btn btn-danger"  Style="margin-left:150px; width: 100px;" (click)="onCancel()">Cancel</button>
+
+
+    </form>
+  </div>
