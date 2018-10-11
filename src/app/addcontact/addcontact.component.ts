@@ -28,7 +28,7 @@ export class AddcontactComponent implements OnInit {
   constructor(private route: Router, private contactService: ContactserviceService, private activatedRoute: ActivatedRoute) {
   }
  
-  //Method to add/update Contact
+  //Method to add/update Contact details
 
   onSave() {
     let isMailValid = false;
